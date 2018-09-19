@@ -11,13 +11,16 @@ var tileSize = 10;
 var gameOver;
 var gamePaused;
 
-var gameSpeed = 10;
+var gameSpeed;
 
 var gameScore = 0;
 
 function setup() {
+	//canvas must be a square or be evenly divisible by tile size
   createCanvas(400, 400);
   background(51);
+	
+	gameSpeed = width/tileSize*0.5
   frameRate(gameSpeed);
 
   rows = height / tileSize;
@@ -68,10 +71,17 @@ function getRandom10(min, max) {
   return getRandomInt(min / 10, max / 10) * 10;
 }
 
+function getRandomTileSize(min, max) {
+  return getRandomInt(min / tileSize, max / tileSize) * tileSize;
+}
+
 function createFood() {
   // get a random point on the board
   var fx = getRandom10(10, width - tileSize);
   var fy = getRandom10(10, height - tileSize);
+	
+	var fx = getRandomTileSize(10, width - tileSize);
+  var fy = getRandomTileSize(10, height - tileSize);
 
   var fpos = createVector(fx, fy);
   console.log(fx + ", " + fy);
