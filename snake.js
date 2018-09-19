@@ -41,30 +41,32 @@ function Snake(x, y, scl, t, px, py) {
 
   // draw a triangle for the tail based off the parent's movement direction
   this.showTail = function(parentmdir) {
-    fill(0, 255, 0);
-    switch (parentmdir) {
-      case 0: // moving up
-        triangle(this.pos.x, this.pos.y,
-          this.pos.x + tileSize, this.pos.y,
-          this.pos.x + tileSize * 0.5, this.pos.y + tileSize);
-        break;
-      case 1: // moving down
-        triangle(this.pos.x + tileSize * 0.5, this.pos.y,
-          this.pos.x + tileSize, this.pos.y + tileSize,
-          this.pos.x, this.pos.y + tileSize);
-        break;
-      case 2: // movking left
-        triangle(this.pos.x, this.pos.y,
-          this.pos.x + tileSize, this.pos.y + tileSize * 0.5,
-          this.pos.x, this.pos.y + tileSize);
-        break;
-      case 3: // moving right
-        triangle(this.pos.x, this.pos.y + tileSize * 0.5,
-          this.pos.x + tileSize, this.pos.y,
-          this.pos.x + tileSize, this.pos.y + tileSize);
-        break;
-      default:
-    }
+    fill(200, 100, 200);
+    rect(this.pos.x, this.pos.y, this.size, this.size);
+    //fill(0, 255, 0);
+    // switch (parentmdir) {
+    //   case 0: // moving up
+    //     triangle(this.pos.x, this.pos.y,
+    //       this.pos.x + tileSize, this.pos.y,
+    //       this.pos.x + tileSize * 0.5, this.pos.y + tileSize);
+    //     break;
+    //   case 1: // moving down
+    //     triangle(this.pos.x + tileSize * 0.5, this.pos.y,
+    //       this.pos.x + tileSize, this.pos.y + tileSize,
+    //       this.pos.x, this.pos.y + tileSize);
+    //     break;
+    //   case 2: // movking left
+    //     triangle(this.pos.x, this.pos.y,
+    //       this.pos.x + tileSize, this.pos.y + tileSize * 0.5,
+    //       this.pos.x, this.pos.y + tileSize);
+    //     break;
+    //   case 3: // moving right
+    //     triangle(this.pos.x, this.pos.y + tileSize * 0.5,
+    //       this.pos.x + tileSize, this.pos.y,
+    //       this.pos.x + tileSize, this.pos.y + tileSize);
+    //     break;
+    //   default:
+    // }
   }
 
   this.moveHead = function(dir, mdir) {
