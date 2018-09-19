@@ -77,11 +77,11 @@ function getRandomTileSize(min, max) {
 
 function createFood() {
   // get a random point on the board
-  var fx = getRandom10(10, width - tileSize);
-  var fy = getRandom10(10, height - tileSize);
+  //var fx = getRandom10(10, width - tileSize);
+  //var fy = getRandom10(10, height - tileSize);
 	
-	var fx = getRandomTileSize(10, width - tileSize);
-  var fy = getRandomTileSize(10, height - tileSize);
+  var fx = getRandomTileSize(tileSize, width - tileSize);
+  var fy = getRandomTileSize(tileSize, height - tileSize);
 
   var fpos = createVector(fx, fy);
   console.log(fx + ", " + fy);
