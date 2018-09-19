@@ -233,6 +233,7 @@ function draw() {
       // Move the food to a new position and update score
       food = createFood();
       gameScore += 100;
+      console.log("Score: " + gameScore);
     }
 
     // check edge collisions
