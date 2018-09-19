@@ -45,7 +45,7 @@ function Snake(x, y, scl, t, px, py) {
     switch (parentmdir) {
       case 0: // moving up
         triangle(this.pos.x, this.pos.y,
-          this.pos.x + tileSize, this.pos.y + tileSize,
+          this.pos.x + tileSize, this.pos.y,
           this.pos.x + tileSize * 0.5, this.pos.y + tileSize);
         break;
       case 1: // moving down
