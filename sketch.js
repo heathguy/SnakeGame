@@ -229,6 +229,10 @@ function draw() {
         default:
       }
       wholeSnake.push(snakePiece);
+      
+      // Move the food to a new position and update score
+      food = createFood();
+      gameScore += 100;
     }
 
     // check edge collisions
@@ -242,6 +246,7 @@ function draw() {
 
   } else {
     noLoop();
+    console.log("Score: " + gameScore);
     console.log("GAME OVER!");
   }
 }
