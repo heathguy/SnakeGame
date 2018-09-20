@@ -10,7 +10,7 @@ var food;
 var mdir;
 
 var rows, cols;
-var tileSize = 80;
+var tileSize = 40;
 
 var gameOver;
 var gamePaused;
@@ -60,6 +60,10 @@ function createFood() {
 		 // generate a random point 
 		fx = getRandomTileSize(0, width - tileSize);
 		fy = getRandomTileSize(0, height - tileSize);
+		
+		//easier game keep food off edges
+		fx = getRandomTileSize(tileSize, width - tileSize*2);
+		fy = getRandomTileSize(tileSize, height - tileSize*2);
 		
 		for (var i = 0; i < wholeSnake.length; i++) {
 			if( (fx == wholeSnake[i].pos.x) && (fy == wholeSnake[i].pos.y) ){
