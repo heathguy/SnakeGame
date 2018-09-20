@@ -9,14 +9,14 @@ function Snake(x, y, scl, t, px, py) {
 
   this.showBody = function() {
 
-    fill(150, 100, 150);
+    fill(0, 200, 200);
     rect(this.pos.x, this.pos.y, this.size, this.size);
 
   }
 
   // draw a rounded rectangle for the head
   this.showHead = function() {
-    fill(0, 255, 0);
+    fill(200, 90, 0);
     var headRadius = 30;
     switch (this.movementDir) {
       case 0: // moving up
@@ -41,7 +41,7 @@ function Snake(x, y, scl, t, px, py) {
 
   // draw a triangle for the tail based off the parent's movement direction
   this.showTail = function(parentmdir) {
-    fill(200, 100, 200);
+    fill(200, 90, 0);
     rect(this.pos.x, this.pos.y, this.size, this.size);
     //fill(0, 255, 0);
     // switch (parentmdir) {
@@ -76,13 +76,13 @@ function Snake(x, y, scl, t, px, py) {
     this.movementDir = mdir;
   }
 
-  this.moveBody = function(dir, mdir, parent) {
-    this.movementDir = mdir;
+//   this.moveBody = function(dir, mdir, parent) {
+//     this.movementDir = mdir;
 
-    this.pos.x = this.parentpos.x;
-    this.pos.y = this.parentpos.y;
+//     this.pos.x = this.parentpos.x;
+//     this.pos.y = this.parentpos.y;
 
-    this.parentpos.x = parent.pos.x;
-    this.parentpos.y = parent.pos.y;
-  }
+//     this.parentpos.x = parent.pos.x;
+//     this.parentpos.y = parent.pos.y;
+//   }
 }
